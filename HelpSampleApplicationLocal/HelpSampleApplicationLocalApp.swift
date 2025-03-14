@@ -12,9 +12,14 @@ import SwiftUI
 
 @main
 struct HelpSampleApplicationLocalApp: App {
+    @State private var store = PeopleStore()
+    @State private var appState = AppState()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartTab()
+                .environment(store)
+                .environment(appState)
         }
     }
 }
