@@ -11,7 +11,7 @@
 import SwiftUI
 
 enum HelpType: Identifiable, View {
-    case peopleList, personEdit, personAdd, distribution, settings
+    case peopleList, personEdit, personAdd, distribution, settings, contact
     
     var id: Self { self }
     
@@ -27,6 +27,8 @@ enum HelpType: Identifiable, View {
             "Age Distribution"
         case .settings:
             "Settings"
+        case .contact:
+            "Contact Developer"
         }
     }
     
@@ -105,6 +107,23 @@ Temporibus omnis molestiae. Possimus est vero aut dicta. Autem at ut. Natus simi
                 [
                     HelpPage(image: Image(systemName: "gear"), imageRatio: .half, title: "", text: "")
                 ]
+        case .contact:
+            [
+                HelpPage(
+                    image: Image(systemName: "person.text.rectangle"),
+                    imageRatio: .fifth,
+                    title: "Developer Contact Information",
+                    text: """
+Please address all questions and diret feedback to the email address listed below. Every attempt will be made to get back with you within 2 business days.
+
+- [General Questions](mailto:questions@myapp.com)
+- [Feedback](mailto:feedback@myapp.com)
+- [Bug Report](mailto:bugs@myapp.com)
+
+You can also check out the **FAQ** at our website [FAQ](https://www.createchsol.com)
+"""
+                )
+            ]
         }
     }
 }

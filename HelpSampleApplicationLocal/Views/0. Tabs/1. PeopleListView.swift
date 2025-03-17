@@ -49,7 +49,12 @@ struct PeopleListView: View {
         .sheet(isPresented: $showSettings) {
             SettingsView()
         }
-        .helpButton(currentHelp: .peopleList, help: $help, bgColor: .orange, symbol: .lightbulb)
+        .helpButton(
+            currentHelp: .contact, .peopleList,
+            help: $help,
+            bgColor: .orange,
+            symbol: .lightbulb
+        )
     }
 }
 
