@@ -16,7 +16,7 @@ struct PeopleListView: View {
     
     @State private var formType: PersonFormType?
     @State private var showSettings: Bool = false
-    
+    @State private var help: HelpType?
     var body: some View {
         List(store.people, selection: Bindable(appState).selectedPerson) { person in
             PersonRowView(person: person).tag(person)
@@ -49,6 +49,7 @@ struct PeopleListView: View {
         .sheet(isPresented: $showSettings) {
             SettingsView()
         }
+        .helpButton(currentHelp: .peopleList, help: $help)
     }
 }
 

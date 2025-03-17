@@ -12,7 +12,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
-    
+    @State private var help: HelpType?
     var body: some View {
         NavigationStack {
             VStack {
@@ -30,6 +30,7 @@ struct SettingsView: View {
                 }
             }
         }
+        .helpButton(currentHelp: .settings, help: $help)
     }
 }
 
