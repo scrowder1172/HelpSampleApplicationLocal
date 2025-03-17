@@ -42,6 +42,7 @@ extension HelpType {
                 [
                     HelpPage(
                         image: Image(systemName: "person.3.fill"),
+                        imageRatio: .quarter,
                         title: "Person List",
                         text: """
 This is a list of all people in our organization.  You will be able to add, edit and delete individuals from the list. **Swipe to the right** to see more help for this screen.
@@ -58,6 +59,7 @@ You will not be able to add unless both a first and last name are provided.
                     ),
                     HelpPage(
                         image: Image(.swipeDelete),
+                        imageRatio: .half,
                         title: "Delete person",
                         text: """
 To delete a person from the list, **swipe from the trailing edge of the row** until you see the *delete* button.  Then you can tap on it to remove the person from the list
@@ -101,7 +103,7 @@ Temporibus omnis molestiae. Possimus est vero aut dicta. Autem at ut. Natus simi
                 ]
             case .settings:
                 [
-                    HelpPage(image: Image(systemName: "gear"), title: "", text: "")
+                    HelpPage(image: Image(systemName: "gear"), imageRatio: .half, title: "", text: "")
                 ]
         }
     }

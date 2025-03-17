@@ -10,6 +10,14 @@
 
 import SwiftUI
 
+enum ImageRatio: CGFloat {
+    case half = 2
+    case third = 3
+    case quarter = 4
+    case fifth = 5
+    case sixth = 6
+}
+
 struct HelpView: View {
     @Environment(\.dismiss) private var dismiss
     
@@ -32,6 +40,13 @@ struct HelpView: View {
                                         .scaledToFit()
                                         .clipped()
                                         .padding()
+                                        .containerRelativeFrame([.horizontal, .vertical]) { dimension, axis in
+                                            if axis == .vertical {
+                                                dimension / page.imageRatio
+                                            } else {
+                                                dimension
+                                            }
+                                        }
                                 }
                                 Text(page.title)
                                     .font(.title)
